@@ -1,0 +1,229 @@
+.brand {
+  padding: 24rpx 18rpx;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.logo {
+  border: 6rpx solid white;
+  border-radius: 16rpx;
+  width: 144rpx;
+  height: 144rpx;
+}
+
+.app-name {
+  font-size: 32rpx;
+  color: white; 
+  font-weight:600;
+}
+
+.btn-home {
+  background-color: transparent;
+  border: 2rpx solid white;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: white;
+  padding: 8rpx 10rpx;
+  line-height: 24rpx;
+}
+
+.btn-home image {
+  width: 26rpx;  
+  height: 24rpx; 
+  margin-right: 8rpx;
+}
+
+.h-bottom {
+  display: flex;
+  align-items:flex-end;
+}
+
+.v-right {
+  display: flex;
+  flex-direction:column;
+  align-items: flex-end;
+}
+
+.btn-normal {
+  border: 1px solid white;
+  border-radius: 14rpx;
+  color: white;
+}
+
+.new-topic {
+  background: 	#FF8C00;
+  
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.menu {
+  margin-left: auto;
+  width: 56rpx;
+  height: 56rpx;
+  align-self: flex-start;
+}
+
+.tab-h {
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.tab-item {
+  margin: 0 32rpx;
+  font-size: 32rpx;
+  display: inline-block;
+  opacity: .7;
+}
+.tab-item.active {
+  position: relative;
+  opacity: 1;
+}
+
+.tab-item .indicator {
+  display: none;
+  height: 8rpx;
+  width: 52rpx;
+  position: absolute;
+  bottom: 4rpx;
+  left: 7rpx;
+  border-radius: 16rpx;
+}
+
+.tab-item.active .indicator {
+  display: block;
+}
+
+.speaker {
+  width: 720rpx;
+  font-size: 28rpx;
+}
+
+.speaker image {
+  width: 30rpx; 
+  height: 30rpx;
+  margin-right: 16rpx;
+  vertical-align: middle;
+  margin-top: -5rpx;
+}
+
+.top-post {
+  font-size: 28rpx;
+}
+
+.top-post .top {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 0 4rpx;
+  vertical-align: middle;
+  border-radius: 4rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: white;
+  background-color: red;
+  margin-right: 16rpx;
+  position: relative;
+  top: -2rpx;
+}
+
+.tag-list {
+  margin-left: -14rpx; 
+  margin-right: -14rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  font-size: 32rpx;
+  color: gray;
+  padding: 4rpx 12rpx;
+  margin: 6rpx 12rpx;
+  word-break: keep-all;
+}
+
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-right: 16rpx;
+}
+
+.comment image{
+  height: 48rpx;
+  width: 48rpx;
+  margin-left: 9.36rpx;
+}
+
+.comment text {
+  text-align: center;
+  width: 86rpx;
+  font-size: 32rpx;
+  color: #888888;
+  word-break: keep-all;
+}
+
+.card {
+  background-color: #ffffff;
+  margin-bottom: 18.72rpx;
+  position: relative;
+  padding: 18rpx 24rpx;
+}
+
+.flow-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.fade-title {
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.img-text {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  height: 1px;
+  background-color: #f8f8f8;
+  margin: 18.72rpx 0;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-large {
+  width: 82rpx; 
+  height: 82rpx;
+  min-width: 82rpx;
+  max-width: 82rpx;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 28rpx;
+}
+
+.b5 {
+  font-weight: 450;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: #888888;
+}
+

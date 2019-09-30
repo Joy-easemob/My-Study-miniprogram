@@ -1,0 +1,94 @@
+<cu-custom bgColor="bg-white">
+  <view slot="content">探险家</view>
+</cu-custom>
+<!-- 讨论社区 -->
+
+<!-- 品牌 -->
+<view style="background-image: url({{meta.app_cover}});background-size:100% auto;">
+<view class='brand'>
+  <view class='h-bottom' style='margin-top:56rpx;'>
+    <image class='logo' src="{{meta.app_logo}}"></image>
+    <view class="v-right" style='margin-left: auto;'>
+      <view class='app-name'>{{meta.app_name}}</view>
+    </view>
+  </view>
+</view>
+</view>
+
+<!-- 公告部分 -->
+<view class='card' style='margin-bottom: 16rpx;'>
+  <view class='single-line speaker' bindtap='clickSpeaker'>
+    <image src='{{speaker.images}}'></image>
+    <text style='margin-right: 8rpx;'>{{speaker.title}} </text> 
+    <text>{{ speaker.desc}}</text>
+  </view>
+</view>
+ 
+<!-- 线 -->
+<view style='margin-bottom:5rpx; background-color: #fefefe;'/>
+
+<!-- 话题标签 -->
+<view class='card'>
+  <view class='tag-list'>
+    <view class='tag'
+      style="{{'color:#C0C0C0;border-color:#FF8C00'}}"
+      wx:for="{{topic}}" wx:for-item="item" wx:key="{{item}}"> {{item.text}} </view>
+  </view>
+  <!-- 线 -->
+  <view style='margin-bottom:9.36rpx; background-color: #fefefe;'/>
+</view>
+
+<!-- 列表 -->
+<view wx:for="{{commentList}}" wx:for-item="item" wx:key="{{item.id}}">
+	
+  <view class="card">
+    <!-- Content Area -->
+    <view bindtap='topicClick' data-idx="{{index}}">
+      <view class="horizontal">
+        <image catchtap='clickAvatar' data-idx="{{index}}"
+          class='avatar-large' 
+          style='margin: 10rpx 18rpx 10rpx 0px;'
+          src="{{item.author.avatar}}" 
+          />
+        <view>
+          <view class='title b5'>{{item.author.nickname}}</view>
+          <view class='subtitle'>{{item.agoTime}}</view>
+        </view>
+		<!-- 点击举报 -->
+       <!-- <image class='menu' src="{{theme.images}}/menu.png" catchtap='clickMenu' data-idx='{{index}}' /> -->
+      </view>
+      <view style='margin-bottom:9.36rpx;'/>
+      <view>
+        <!-- 文本评论 -->
+        <view>
+          <kw-text text="{{item.content}}" limit="{{70}}" ></kw-text>
+        </view>
+
+        <!-- Image列表 -->
+        <block wx:if="{{item.images && item.images.length > 0}}">
+          <view style='margin: 8rpx 0rpx'>
+            <img-grid images="{{item.images}}"> </img-grid> 
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 讨论区的尾部 -->
+  <view class='line'></view>
+    <view class='flow-right'>
+     <!-- <view class='fade-title' style='margin-right:auto;'>{{item.time}}</view> -->
+      <view class='comment' bindtap='commentClick' data-idx="{{index}}">
+        <image src='{{comment}}'></image>
+        <text>评论</text>
+      </view>
+      <view class='img-text' bindtap='favorClick' data-idx="{{index}}">
+        <image src="{{like}}"></image>
+        <text>赞</text>
+      </view>
+	 </view>
+	</view>
+  
+  <view style='margin-bottom:9.36rpx;'/>
+</view>
+
+<!-- 新建 write -->

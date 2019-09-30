@@ -1,0 +1,177 @@
+<cu-custom bgColor="bg-gradual-orange">
+  <view slot="content">探险家</view>
+</cu-custom>
+
+<view class="cu-card case {{isCard?'':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-orange">史诗</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">有方旅行，红酒鉴赏，我以天理为凭，不在踏入这片荒芜，不再受到人们的歧视，带你品尝红酒</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">捷克斯洛伐克 皮匠</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+
+  
+
+  <view class="cu-card case {{isCard?'':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-blue">史诗</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">有方旅行，红酒鉴赏，我以天理为凭，不在踏入这片荒芜，不再受到人们的歧视，带你品尝红酒</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">捷克斯洛伐克 皮匠</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+
+  <view class="cu-card case {{isCard?'':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-blue">史诗</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">有方旅行，红酒鉴赏，我以天理为凭，不在踏入这片荒芜，不再受到人们的歧视，带你品尝红酒</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">捷克斯洛伐克 皮匠</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  <view class="cu-card case {{''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-orange">史诗</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">有方旅行，红酒鉴赏，我以天理为凭，不在踏入这片荒芜，不再受到人们的歧视，带你品尝红酒</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">捷克斯洛伐克 皮匠</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+
+<!--  -->
+ <view class="cu-card case {{''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <view class="cu-tag round radius bg-orange">史诗</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">有方旅行，红酒鉴赏，我以天理为凭，不在踏入这片荒芜，不再受到人们的歧视，带你品尝红酒</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">捷克斯洛伐克 皮匠</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  <view class="cu-card case {{isCard?'':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+      <view class="cu-tag bg-blue">史诗</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">有方旅行，红酒鉴赏，我以天理为凭，不在踏入这片荒芜，不再受到人们的歧视，带你品尝红酒</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">捷克斯洛伐克 皮匠</view>
+          <view class="text-gray text-sm flex justify-between">
+            十天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
