@@ -6,10 +6,6 @@ Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
-    motto: 'Hi 开发者！',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     swiperList: [{
       id: 0,
       type: 'image',
@@ -40,35 +36,35 @@ Page({
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
     iconList: [{
-      icon: 'cardboardfill',
+      icon: 'footprint',
       color: 'red',
       badge: 120,
-      name: 'VR'
+      name: '艺术游学'
     }, {
-      icon: 'recordfill',
-      color: 'orange',
+      icon: 'servicefill',
+      color: 'mauve',
       badge: 1,
-      name: '录像'
+      name: '酒店管理'
     }, {
       icon: 'picfill',
       color: 'yellow',
       badge: 0,
-      name: '图像'
+      name: '欧洲画廊'
     }, {
-      icon: 'noticefill',
+      icon: 'medalfill',
       color: 'olive',
       badge: 22,
-      name: '通知'
+      name: '马术学校'
     }, {
-      icon: 'upstagefill',
+      icon: 'rankfill',
       color: 'cyan',
       badge: 0,
-      name: '排行榜'
+      name: '建筑流派'
     }, {
-      icon: 'clothesfill',
-      color: 'blue',
+      icon: 'upstagefill',
+      color: 'red',
       badge: 0,
-      name: '皮肤'
+      name: '红酒鉴赏'
     }],
     gridCol: 3,
     skin: false,

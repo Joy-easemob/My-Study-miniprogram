@@ -30,7 +30,6 @@
 
 @font-face {
 	font-family: "cuIcon";
-	src: url('//at.alicdn.com/t/font_533566_yfq2d9wdij.eot?t=1545239985831');
 	/* IE9*/
 	src: url('//at.alicdn.com/t/font_533566_yfq2d9wdij.eot?t=1545239985831#iefix') format('embedded-opentype'),
 		/* IE6-IE8 */
