@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/navigator/nav",
+    "pages/navdetial/navdetial",
     "pages/index/index",
     "pages/detial/detial",
     "pages/comment/comment",
     "pages/mine/mine",
     "pages/videoInfo/videoInfo",
-    "pages/navigator/nav",
     "pages/about/about",
     "pages/class/class",
     "pages/shop/shop",
@@ -30,19 +31,19 @@
       },
       {
         "pagePath": "pages/navigator/nav",
-        "text": "探险家",
+        "text": "环球司导",
         "iconPath": "images/bottomIcon/find.png",
         "selectedIconPath": "images/bottomIcon/find_light.png"
       },
       {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
+        "pagePath": "pages/comment/comment",
+        "text": "社区",
         "iconPath": "images/bottomIcon/news.png",
         "selectedIconPath": "images/bottomIcon/news_light.png"
       },
       {
-        "pagePath": "pages/about/about",
-        "text": "我们",
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
         "iconPath": "images/bottomIcon/my.png",
         "selectedIconPath": "images/bottomIcon/my_light.png"
       }

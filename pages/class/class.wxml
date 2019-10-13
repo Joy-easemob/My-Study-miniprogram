@@ -1,2 +1,11 @@
 <!-- class分类按卖点排列 -->
+
+<!-- 头部 -->
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">{{title}}</view></cu-custom>
+
+
+<!--  -->
 <view>Hello Class</view>
+

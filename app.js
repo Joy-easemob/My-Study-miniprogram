@@ -1,5 +1,6 @@
 //app.js
 App({
+  serverUrl: "http://192.168.31.1:8080",
   onLaunch: function () {
     // 获取系统状态栏信息
     wx.getSystemInfo({
@@ -12,5 +13,6 @@ App({
     })
   },
   globalData: {
+    
   }
 })

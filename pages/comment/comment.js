@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title:"",
     //头部信息
      meta: {
 		 //背景图片地址
@@ -44,7 +45,6 @@ Page({
 		agoTime:"1小时前",//发布时间
 		content:"",//文字内容
 		images:"",//图片
-		
 	}
 	]
   },
@@ -53,7 +53,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var me = this;
+    var index = options.index;
+    var topic = options.topic;
+    me.setData({
+      title: topic
+    })
   },
 
   /**

@@ -1,108 +1,76 @@
-<cu-custom bgColor="bg-white">
-  <view slot="content">探险家</view>
+<!-- <view class='page'> -->
+<!-- 头部信息 -->
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">{{title}}</view>
 </cu-custom>
 
-<!--瞬间 详情-->
-<view class="container">
-  <block>
+<!-- 详细信息 -->
 
+<!-- 图片 -->
+  <!-- 轮播图 -->
 
-    <!--头部的方块栏-->
-    <view>
-      <!--滚动列表展示我参与、创建的打卡圈子 && 创建、查看全部、发现更多打卡圈子按钮-->
-      <scroll-view scroll-x class="punch-card-project-lists" scroll-left>
-        <view class="container-item" bindtap="createNewPunchCardProject">
-          <view class="operator-btn-view btn-color-1">
-            <image src="/images/button/add_200.png"></image>
-            <view>加入收藏</view>
+  <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{user.avator}});">
+        </view>
+        <view class="content flex-sub">
+          <view>{{user.nickname}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            2019年12月3日
           </view>
         </view>
-
-        <view class="container-item" bindtap="intoFindMorePunchCardProject">
-          <view class="operator-btn-view btn-color-3">
-            <image src="/images/button/like_200.png"></image>
-            <view>查看评论</view>
+        <view class="grid col-5 padding-sm">
+          <button class="cu-btn round bg-olive {{'shadow'}}">查看</button>
           </view>
-        </view>
-      </scroll-view>
-    </view>
-
-
-    <!--导航条 瞬间和详情-->
-    <view class="navigation-bar-container {{navigationBarFix}}">
-      <view class="navigation-bar">
-        <view class="navigation-bar-item" bindtap="showFollowRecommendView">
-          <block wx:if="{{showFollowRecommendView}}">
-            <text style="color: black">瞬间</text>
-          </block>
-          <block wx:else>
-            <text>瞬间</text>
-          </block>
-        </view>
-
-        <view class="navigation-bar-item" bindtap="showDiaryRecommendView">
-          <block wx:if="{{showDiaryRecommendView}}">
-            <text style="color: black">详情</text>
-          </block>
-          <block wx:else>
-            <text>详情</text>
-          </block>
-        </view>
       </view>
-
-      <!--标识出当前选择的选项卡 默认为日记-->
-      <view class="selected-tab-indicate" animation="{{animation}}">
-      </view>
-
-      <view class="separator-height-1px" style="margin-top: 2px"></view>
-    </view>
-    
-
-    <!-- 详情，以文章为主体 -->
-    <block wx:if="{{showDiaryRecommendView}}">
-      <view>Hello 详情</view>
-    </block>
+</view>
 
 
-    <!-- 瞬间 -->
-    <block wx:else>
-    <!--打卡日记推荐内容视图-->
-    <!-- 瀑布卡片 -->
-    <view class='water-fall'>
-      <view class="item-box" wx:for="{{dataList}}" wx:key="{{index}}">
-        <text class='tag'>{{item.tag}}</text>
-        <image class='pro-img' src="{{item.img}}" mode="widthFix"></image>
-        <image class='play' src='../../images/video.png'></image>
-        <view class='one-line-hide-txt'>{{item.desc}}</view>
-        <view class='bt-info'>
-          <view class='user-info'>
-            <image class='user-icon' src='{{likeImage}}'></image>
-            <text class='user-nike'>{{item.nickName}}</text>
-          </view>
-          <view class='zan-info'>
-            <image class='zan-icon' src='{{item.img}}'></image>
-            <text class='zan-num'>{{item.likeCount}}</text>
-          </view>
-        </view>
+<swiper class="screen-swiper {{'square-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+
+<!--  -->
+
+<view class="solid-bottom text-lg padding text-shadow bg-white">
+  <text class="text-black text-bold">{{title}}</text>
+</view>
+<!-- tag标签 -->
+<view class='padding-xs radius shadow bg-white'>
+    <view class="cu-tag bg-red light  round">1600</view>
+    <view class="cu-tag bg-green light  round">春天的欧洲</view>
+    <view class="cu-tag bg-yellow light  round">有方旅行</view>
+</view>
+
+<!-- 详细信息图片 -->
+<view class="solids-bottom padding-xs flex align-center bg-gray">
+    <view class="flex-sub">
+      <view class="padding-xl radius shadow bg-white">
+
+      <!-- 文章标题 -->
+      <view class="flex-sub text-center">
+      <view class="solid-bottom text-lg padding">
+        <text class="text-black">{{heading}}</text>
       </view>
     </view>
-    </block>
-
-
-    <!--底部加载更多-->
-    <view class="weui-loadmore" hidden="{{!moreRecommendDiaryListLoad}}" style="margin-bottom: 80px">
-      <view class="weui-loading"></view>
-      <view class="weui-loadmore__tips">正在加载</view>
+    <view class="flex-sub">
+      <text  space="ensp">
+      {{content}}
+      </text>
     </view>
-
-    <view class="not-more-punch-card-diary-notice" hidden="{{!notMoreRecommendDiaryData}}" style="margin: 25px 22% 50px 22%">
-      <view class="line" style="margin-right: 2px"></view>
-      <view class="dot"></view>
-      <view style="margin: 0 5px;">我可是有底线的哦</view>
-      <view class="dot"></view>
-      <view class="line" style="margin-left: 2px"></view>
+      </view>
     </view>
-
-
-  </block>
+  </view>
+  
+  <!-- 返回 查看社区 下一篇-->
+  <view class="padding flex flex-wrap justify-between align-center bg-gray">
+    <button class="cu-btn round lg bg-white text-orange" catchtap='goBack'>返回</button>
+    <button class="cu-btn round lg bg-white text-orange" catchtap='getComment' data-id='{{projectid}}'>查看详情</button>
+    <button class="cu-btn round lg bg-white text-orange" catchtap='getNext' >下一篇</button>
+  </view>
+<view>
 </view>

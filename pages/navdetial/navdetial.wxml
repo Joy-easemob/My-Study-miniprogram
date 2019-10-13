@@ -1,0 +1,57 @@
+<view class='cu-custom'>
+
+<view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>有方司导</view>
+</view>
+
+<view class="UCenter-bg" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');">
+  <view class="cu-avatar xl round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
+  <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+  </view>
+  <view class="text-xl">布拉格-大叔
+    <text class="text-df">wx:db1220178127</text>
+  </view>
+  <view class="margin-top-sm">
+    <text>地点：布拉格</text>
+  </view>
+</view>
+</view>
+
+<view class="bg-white margin-bottom-sm">
+    <view class="text-sm padding flex-sub text-center">
+      <text class="text-grey">简介：有方旅行介绍司导，曾经带领过很多人参观欧洲，获得了名号，三千分离java是世界上最好的语言</text>
+    <view class="flex justify-center margin-top">
+      <button class="cu-btn round lg margin-sm bg-blue ">聊天</button>
+      <button class="cu-btn round lg margin-sm {{attention.is?'line-blue':'bg-blue'}}">{{attention.name}}</button>
+    </view>
+</view>
+
+<view class="cu-bar margin-top bg-gray">
+  <view class="action">
+      <text class="cuIcon-title text-blue"></text>30天前来过
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabscroll}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+<block wx:if="{{TabCur===1}}">
+图片
+</block>
+
+<block wx:elif="{{TabCur===2}}">
+项目
+</block>
+
+<block wx:else>
+介绍
+</block>

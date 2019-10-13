@@ -1,3 +1,10 @@
 .grid{
   height: 160px;
-  }
+}
+
+.tags{
+  display: flex;
+  flex-direction: row; 
+  flex-wrap :nowrap;
+  justify-content: space-around;
+}

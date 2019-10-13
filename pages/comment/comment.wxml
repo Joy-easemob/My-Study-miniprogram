@@ -1,6 +1,7 @@
-<cu-custom bgColor="bg-white">
-  <view slot="content">探险家</view>
-</cu-custom>
+<!-- 头部 -->
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">{{title}}</view></cu-custom>
 <!-- 讨论社区 -->
 
 <!-- 品牌 -->
