@@ -3,7 +3,6 @@ page{
 }
 
 .UCenter-bg {
-  /* background-image: url(https://image.weilanwl.com/color2.0/index.jpg); */
   background-size: cover;
   height: 480rpx;
   display: flex;
@@ -48,3 +47,5 @@ map,.mapBox{
   width: 750rpx;
   height: 300rpx;
 }
+
+

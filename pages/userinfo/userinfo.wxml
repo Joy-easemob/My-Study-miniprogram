@@ -1,0 +1,97 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">补充信息</view>
+</cu-custom>
+
+<form bindsubmit='saveinfo'>
+	<view class="cu-form-group margin-top" bindtap='changeface'>
+		<view class="title">头像</view>
+		<view class="cu-avatar xl round" style="background-image:url({{serverUrl}}{{user.avatar}});"></view>
+	</view>
+  	<view class="cu-form-group">
+    		<view class="title">性别</view>
+		<switch class="switch-sex" checked name="sex"></switch>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">昵称</view>
+		<input placeholder="{{user.nickname}}" name="nickname"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">地点</view>
+		<input placeholder="国家-城市" name="local"></input>
+	</view>
+ <view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input placeholder="其他地区请联系客服" name="contact"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+ </view>
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+<view class="cu-bar margin-top bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>置顶简介
+  </view>
+</view>
+  	<view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" name="top" placeholder="置顶简介"></textarea>
+	</view>
+  <view class="cu-bar margin-top bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>详细介绍
+  </view>
+</view>
+  	<view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" name="introduct" placeholder="详细简介"></textarea>
+	</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue lg shadow " bindtap="goProject">发布项目</button>
+  <button class="cu-btn bg-red margin-tb-sm lg shadow" form-type='submit'>保存</button>
+</view>
+</form>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">有方旅行</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      保存成功
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+  

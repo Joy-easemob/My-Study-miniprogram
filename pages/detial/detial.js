@@ -9,15 +9,13 @@ Page({
     projectid:"",
     user:{
       nickname:"",
-      avator:""
+      avatar:""
     },
     createtime:"",
     swiperList: [{
-      id: 0,
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
     }, {
-      id: 1,
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
     }, {
@@ -41,10 +39,11 @@ Page({
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
-    title:"",
-    tags:[],
-    heading:"",
-    content:""
+    title: '【红酒鉴赏】伊犁薰衣草花海是中国的普罗旺斯，风吹过来，深紫色的波浪层叠起伏',
+    introduct:'',
+    tags: [{ tag: '1600' }, { tag: "春天的欧洲" }, { tag:"有方旅行"}],
+    contents: [{ title: '【项目简介】',
+                 content:'第一步，编辑你的旅行路线，我们生活的轨迹太过于浮躁，也太过复杂，有时候需要将这颗浮躁的心沉浸下来'}],
   },
 
   /**
@@ -55,28 +54,29 @@ Page({
     console.log(options.proId);
     var proid = options.proId;
     var serverUrl=app.serverUrl;
+
     wx.request({
       url: serverUrl +'/prodetail?proid='+proid,
       success(res) {
         var data = res.data.entity;
         console.log(data);
-        var user={
-          nickname: data.user.userName,
-          avator: serverUrl+data.user.userAvatar,
-        }
+        var user=data.user;
         console.log(user);
         me.setData({
           serverUrl:serverUrl,
           projectid:data.projectId,
           user:user,
-          // swiperList:
+          //swiperList:data.image,
           title:data.title,
           heading:data.heading,
-          content:data.desc
+          introduct:data.introduct,
+          contents:data.contents
         })
       }
     })
-   // console.log(me.data.projectid)
+
+    
+   console.log(me.data.projectid)
   },
   goBack:function(){
     wx.navigateBack({

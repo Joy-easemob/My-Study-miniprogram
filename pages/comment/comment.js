@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:"",
+    title:"有方微社区",
     //头部信息
      meta: {
 		 //背景图片地址
@@ -36,17 +36,36 @@ Page({
 	//点赞图片
 	like:"",
 	//讨论区
-	commentList:[{
-		author:{
-			avatar:"", //头像地址
-			nickname:"",//昵称
-			
-			},
-		agoTime:"1小时前",//发布时间
-		content:"",//文字内容
-		images:"",//图片
-	}
-	]
+    commentList: [{
+      user: {
+        avatar: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg", //头像地址
+        nickname: "图样图森破",//昵称
+      },
+      agoTime: "1小时前",//发布时间
+      content: "郁闷的心情久久不能平复",//文字内容
+      //0:纯文字 1：一张图片 2：多张图片
+      type: 1,
+      images: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",//图片
+      //是否组队
+      isgroup:true
+    },{
+      user: {
+        avatar: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg", //头像地址
+        nickname: "图样图森破",//昵称
+      },
+      agoTime: "1小时前",//发布时间
+      content: "郁闷的心情久久不能平复",//文字内容
+      //0:纯文字 1：一张图片 2：多张图片
+      type: 2,
+      images: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",//图片
+      //是否组队
+      isgroup: false
+    }
+	],
+  //图片
+  iconList:[{
+    
+  }]
   },
 
   /**
@@ -57,56 +76,29 @@ Page({
     var index = options.index;
     var topic = options.topic;
     me.setData({
-      title: topic
+      //title: topic
+    }),
+    me.getCommentList();
+  },
+  getCommentList:function(){
+    var me=this;
+    var serverUrl=app.serverUrl;
+    wx.request({
+      url: serverUrl+'/commentlist',
+      success(e){
+        console.log(e);
+        var commentList=e.data.entities;
+        me.setData({
+          commentList: commentList
+        })
+      }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+  addcomment:function(){
+    console.log("新建");
+    wx.navigateTo({
+      url: '../addcomment/addcomment',
+    })
   }
+
 })

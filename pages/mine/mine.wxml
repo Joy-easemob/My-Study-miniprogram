@@ -1,4 +1,88 @@
-<view>
-    <image class="about-top-img" src="https://wx-lx-shop.oss-cn-beijing.aliyuncs.com/stone/timg%20%282%29.jpg" />
-    <image class="about-avatar-img" src="https://wx-lx-shop.oss-cn-beijing.aliyuncs.com/stone/timg%20%282%29.jpg" />
+<view class='cu-custom'>
+
+<view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;' wx:if='{{uesr.typeid===0}}'>有方体验官</view>
+    <view class='content' style='top:{{StatusBar}}px;' wx:else>有方司导</view>
+</view>
+
+<view class="UCenter-bg" style="background-image: url({{serverUrl}}{{user.background}});">
+  <view class="cu-avatar xl round margin-left" style="background-image: url({{serverUrl}}{{user.avatar}});">
+  <view class="cu-tag badge {{user.sex?'cuIcon-male bg-blue':'cuIcon-female bg-pink'}}"></view>
+  </view>
+  <view class="text-xl">{{user.nickname}}
+    <text class="text-df">{{user.contact}}</text>
+  </view>
+  <view class="margin-top-sm">
+    <text>地点：{{user.local}}</text>
+  </view>
+</view>
+</view>
+
+<view class="bg-white margin-bottom-sm">
+    <view class="text-sm padding flex-sub text-center">
+      <text class="text-grey">{{user.top}}</text>
+      <view wx:if='{{!islogin}}' class="flex justify-center margin-top" catchtap='gologin'>
+          <button class="cu-btn round lg margin-sm bg-gray">请先登录</button>
+      </view>
+</view>
+
+<view class="cu-bar margin-top bg-gray">
+  <view class="action">
+      <text class="cuIcon-title text-blue"></text>用户状态
+  </view>
+   <button class="cu-btn bg-red round" bindtap='logout'>注销</button>
+</view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabscroll}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+<block wx:if="{{TabCur===1}}">
+<!-- 图片 -->
+ <view class="grid col-2 grid-square padding" wx:for="{{user.imagelist}}" wx:key wx:for-item="image">
+      <view class="bg-img" wx:for="{{2}}" wx:key style="background-image:url(image);"></view>
+    </view>
+</block>
+
+<block wx:elif="{{TabCur===2}}">
+<!-- 项目 -->
+ <view  class='bg-gray' wx:for="{{user.projectlist}}"  wx:key="item.projectId" catchtap="goDetail" data-id="{{item.projectId}}">
+<view class="cu-card article" bindlongtap='deletepro' data-id='{{item.projectId}}'>
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.title}}
+</view>
+    </view>
+    <view class="content">
+      <image src="{{serverUrl}}{{item.image}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content">{{item.desc}}</view>
+        <view >
+          <view class="cu-tag bg-red light sm round">{{item.tags[0]}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.tags[1]}}</view>
+          <view class="cu-tag bg-yellow light sm round">{{item.tags[2]}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+  </view>
+  <!--  -->
+</block>
+
+<block wx:else>
+<!-- 介绍 -->
+<view class='padding'>
+  <wemark md="{{user.introduct}}" link highlight="true" type="wemark"></wemark>
+</view>
+</block>
+
+<!-- 编辑按钮 -->
+<view wx:if='{{islogin}}' bindtap='userInfo'>
+ <image  class='add' src='../../images/write.png'></image>
 </view>

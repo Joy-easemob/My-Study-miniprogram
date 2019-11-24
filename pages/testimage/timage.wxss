@@ -1,0 +1,7 @@
+.detail{
+  width: 80%;
+}
+.intro {
+  margin: 30px;
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-yellow">
+  <view slot="content">有方旅行</view>
+</cu-custom>
+
+ <view class='container_login'>
+
+      <view class='header'>
+        <image src='../../images/nologin.png' class='header-img'></image>
+      </view>
+
+      <view class='content'>
+        <view class='input'>
+          <view class='account'>
+            <text>账号 </text>
+            <view class='line'></view>
+            <input placeholder="{{email}}" value="{{usernum}}" bindinput='getUsername'></input>
+          </view>
+          <view class='password'>
+            <text>密码 </text>
+            <view class='line'></view>
+            <input password='true' value="{{password}}" placeholder="password" bindinput='getPassword'></input>
+          </view>
+        </view>
+        <view class='commit' bindtap='userlogin'>
+          <view wx:if='{{islogin}}'>
+            <button>登 录</button>
+          </view>
+          <view wx:else>
+            <button>注册并登录</button>
+          </view>
+        </view>
+      </view>
+
+      <view class='footer'>
+        <view class='userTip'>
+          <text>忘记密码</text>
+          <text wx:if='{{islogin}}' bindtap='regist'>新用户注册</text>
+          <text wx:else bindtap='gologin'>返回登陆</text>
+        </view>
+      </view>
+
+    </view>

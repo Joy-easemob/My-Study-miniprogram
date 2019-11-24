@@ -33,9 +33,11 @@ Page({
   /**
    * 获取司导详情
    */
-  getDetial:function(){
+  getDetial:function(data){
+    var userid=data.currentTarget.dataset.id;
+    console.log(userid);
     wx.navigateTo({
-      url: '../navdetial/navdetial',
+      url: '../navdetial/navdetial?userid='+userid,
     })
   }
 })

@@ -1,0 +1,17 @@
+.join{
+  padding: 15px;
+  position: relative;
+  background-color: #1ff5f9;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items:center;
+  align-items:center; 
+}
+
+.joinimg{
+  margin-right:.8em;
+  width: 60px;
+  height: 60px;
+  line-height:60px;
+  text-align: center;
+}

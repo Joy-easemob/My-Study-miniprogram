@@ -1,0 +1,55 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">发布评论</view>
+</cu-custom>
+
+<!--  -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-green"></text>增加评论
+    </view>
+</view>
+
+<view class="cu-form-group">
+		<textarea maxlength="-1" name='content' bindinput="textComment" placeholder=""></textarea>
+</view>
+<view style='margin-bottom:9.36rpx; background-color: #fefefe;'/>
+<view class="cu-bar bg-white">
+	<view class="action">
+			增加图片
+	</view>
+	<view class="action">
+		{{imgList.length}}/9
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="grid col-4 grid-square flex-sub">
+		<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+			<image src='{{imgList[index]}}' mode='aspectFill'></image>
+			<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+				<text class="cuIcon-close"></text>
+			</view>
+		</view>
+		<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+			<text class="cuIcon-cameraadd"></text>
+		</view>
+	</view>
+</view>
+
+<!-- 群聊，组团 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+      <text class="cuIcon-title text-green" ></text>绑定微信群
+  </view>
+  <switch class="orange radius sm padding-right" checked="{{isgroup}}" bindchange="changegroup"></switch>
+</view>
+
+<view class="cu-form-group"  hidden="{{!isgroup}}">
+	<view class="title">组团名称</view>
+	<input placeholder="输入名称" bindinput='groupname'></input>
+	<button class="cu-btn bg-green shadow" bindtap='addcode'>群聊二维码</button>
+</view>
+
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-red margin-tb-sm lg" bindtap='addcomment'>发布</button>
+</view>

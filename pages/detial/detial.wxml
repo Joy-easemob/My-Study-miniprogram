@@ -8,11 +8,10 @@
 <!-- 详细信息 -->
 
 <!-- 图片 -->
-  <!-- 轮播图 -->
-
+<!-- 轮播图 -->
   <view class="cu-list menu-avatar">
       <view class="cu-item">
-        <view class="cu-avatar round lg" style="background-image:url({{user.avator}});">
+        <view class="cu-avatar round lg" style="background-image:url({{serverUrl}}{{user.avatar}});">
         </view>
         <view class="content flex-sub">
           <view>{{user.nickname}}</view>
@@ -24,7 +23,7 @@
           <button class="cu-btn round bg-olive {{'shadow'}}">查看</button>
           </view>
       </view>
-</view>
+  </view>
 
 
 <swiper class="screen-swiper {{'square-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
@@ -34,39 +33,39 @@
   </swiper-item>
 </swiper>
 
-<!--  -->
-
-<view class="solid-bottom text-lg padding text-shadow bg-white">
+<view class="text-lg padding-xs text-shadow bg-white">
   <text class="text-black text-bold">{{title}}</text>
+  <!-- tag标签 -->
+  <view class='padding-sm bg-white'>
+    <view class="cu-tag bg-red light  round">{{tags[0].tag}}</view>
+    <view class="cu-tag bg-green light  round">{{tags[1].tag}}</view>
+    <view class="cu-tag bg-yellow light  round">{{tags[2].tag}}</view>
 </view>
-<!-- tag标签 -->
-<view class='padding-xs radius shadow bg-white'>
-    <view class="cu-tag bg-red light  round">1600</view>
-    <view class="cu-tag bg-green light  round">春天的欧洲</view>
-    <view class="cu-tag bg-yellow light  round">有方旅行</view>
 </view>
 
-<!-- 详细信息图片 -->
-<view class="solids-bottom padding-xs flex align-center bg-gray">
-    <view class="flex-sub">
-      <view class="padding-xl radius shadow bg-white">
+  <view class="padding-sm bg-gray">
 
-      <!-- 文章标题 -->
-      <view class="flex-sub text-center">
-      <view class="solid-bottom text-lg padding">
-        <text class="text-black">{{heading}}</text>
-      </view>
+    <view class="padding-xl radius  bg-white">
+     <view class="text-xl padding">
+        <text class="text-black text-bold">【项目简介】</text>
+     </view>
+     <view class="text padding">
+        <text class="text-black">{{introduct}}</text>
+     </view>
     </view>
-    <view class="flex-sub">
-      <text  space="ensp">
-      {{content}}
-      </text>
+
+     <view class="padding-xl radius bg-white" wx:for='{{contents}}' wx:for-item='content' wx:key='title'>
+     <view class="text-xl padding">
+        <text class="text-black text-bold">{{content.title}}</text>
+     </view>
+     <view class="text-lg padding">
+        <text class="text-black">{{content.content}}</text>
+     </view>
     </view>
-      </view>
-    </view>
+
   </view>
   
-  <!-- 返回 查看社区 下一篇-->
+  <!-- 返回 查看社区/立即报名 下一篇-->
   <view class="padding flex flex-wrap justify-between align-center bg-gray">
     <button class="cu-btn round lg bg-white text-orange" catchtap='goBack'>返回</button>
     <button class="cu-btn round lg bg-white text-orange" catchtap='getComment' data-id='{{projectid}}'>查看详情</button>

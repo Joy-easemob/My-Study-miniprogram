@@ -1,15 +1,22 @@
 {
   "pages": [
+    "pages/index/index",
+    
+    "pages/comment/comment",
+    
+    "pages/addcomment/addcomment",
+    "pages/mine/mine",
+    "pages/testimage/timage",
+    "pages/youfun/project",
+    "pages/login/login",
+   
     "pages/navigator/nav",
     "pages/navdetial/navdetial",
-    "pages/index/index",
     "pages/detial/detial",
-    "pages/comment/comment",
-    "pages/mine/mine",
-    "pages/videoInfo/videoInfo",
-    "pages/about/about",
     "pages/class/class",
+    "pages/userinfo/userinfo",
     "pages/shop/shop",
+    "pages/myproject/myproject",
     "pages/search/search"
   ],
   "window": {
@@ -37,20 +44,21 @@
       },
       {
         "pagePath": "pages/comment/comment",
-        "text": "社区",
+        "text": "社区组团",
         "iconPath": "images/bottomIcon/news.png",
         "selectedIconPath": "images/bottomIcon/news_light.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "我的",
+        "text": "有方",
         "iconPath": "images/bottomIcon/my.png",
         "selectedIconPath": "images/bottomIcon/my_light.png"
       }
     ]
   },
   "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom",
+    "wemark": "../../wemark/wemark"
   },
   "sitemapLocation": "sitemap.json"
 }

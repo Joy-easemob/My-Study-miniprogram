@@ -1,8 +1,30 @@
+.add{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 30px;
+  right: 30px;
+}
+
+.hello{
+  width: 220px;
+}
+
+/*  */
+.card {
+  background-color: #ffffff;
+  margin-bottom: 18.72rpx;
+  position: relative;
+  padding: 18rpx 24rpx;
+}
+
+/*  */
 .brand {
   padding: 24rpx 18rpx;
   background-color: rgba(0, 0, 0, .3);
 }
 
+/*  */
 .logo {
   border: 6rpx solid white;
   border-radius: 16rpx;
@@ -10,96 +32,24 @@
   height: 144rpx;
 }
 
+/*  */
 .app-name {
   font-size: 32rpx;
   color: white; 
   font-weight:600;
 }
 
-.btn-home {
-  background-color: transparent;
-  border: 2rpx solid white;
-  border-radius: 10rpx;
-  font-size: 24rpx;
-  color: white;
-  padding: 8rpx 10rpx;
-  line-height: 24rpx;
-}
-
-.btn-home image {
-  width: 26rpx;  
-  height: 24rpx; 
-  margin-right: 8rpx;
-}
-
+/*  */
 .h-bottom {
   display: flex;
   align-items:flex-end;
 }
 
+/*  */
 .v-right {
   display: flex;
   flex-direction:column;
   align-items: flex-end;
-}
-
-.btn-normal {
-  border: 1px solid white;
-  border-radius: 14rpx;
-  color: white;
-}
-
-.new-topic {
-  background: 	#FF8C00;
-  
-  position: fixed;
-  bottom: 30rpx;
-  right: 30rpx;
-  width: 128rpx;
-  height: 128rpx;
-}
-
-.menu {
-  margin-left: auto;
-  width: 56rpx;
-  height: 56rpx;
-  align-self: flex-start;
-}
-
-.tab-h {
-  height: 100rpx;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-  line-height: 80rpx;
-  background: #fff;
-  font-size: 16px;
-  white-space: nowrap;
-}
-
-.tab-item {
-  margin: 0 32rpx;
-  font-size: 32rpx;
-  display: inline-block;
-  opacity: .7;
-}
-.tab-item.active {
-  position: relative;
-  opacity: 1;
-}
-
-.tab-item .indicator {
-  display: none;
-  height: 8rpx;
-  width: 52rpx;
-  position: absolute;
-  bottom: 4rpx;
-  left: 7rpx;
-  border-radius: 16rpx;
-}
-
-.tab-item.active .indicator {
-  display: block;
 }
 
 .speaker {
@@ -115,32 +65,14 @@
   margin-top: -5rpx;
 }
 
-.top-post {
-  font-size: 28rpx;
-}
-
-.top-post .top {
-  width: 30rpx;
-  height: 30rpx;
-  padding: 0 4rpx;
-  vertical-align: middle;
-  border-radius: 4rpx;
-  text-align: center;
-  font-size: 24rpx;
-  color: white;
-  background-color: red;
-  margin-right: 16rpx;
-  position: relative;
-  top: -2rpx;
-}
-
+/*  */
 .tag-list {
   margin-left: -14rpx; 
   margin-right: -14rpx;
   display: flex;
   flex-wrap: wrap;
 }
-
+/*  */
 .tag {
   border: 1px solid lightgray;
   border-radius: 2px;
@@ -151,79 +83,79 @@
   word-break: keep-all;
 }
 
+/*  */
+.we-chat-group-qr-code-img {
+    width: auto;
+    height: auto;
+    margin: 0 10px 10px 10px;
+    padding: 12px 12px;
+    /* border-radius: 3px; */
+    /* border: 1px #e5e5e5 solid; */
 
-.comment {
-  display: flex;
-  align-items: center;
-  margin-right: 16rpx;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
 }
 
-.comment image{
-  height: 48rpx;
-  width: 48rpx;
-  margin-left: 9.36rpx;
+.we-chat-group-qr-code-img > image {
+    width: 40px;
+    height: 40px;
 }
 
-.comment text {
-  text-align: center;
-  width: 86rpx;
-  font-size: 32rpx;
-  color: #888888;
-  word-break: keep-all;
+.we-chat-group-qr-code-img-operate-btn {
+    width:170rpx;
+    height: auto;
+    background-color: #FF6F00;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: white;
+
 }
 
-.card {
-  background-color: #ffffff;
-  margin-bottom: 18.72rpx;
-  position: relative;
-  padding: 18rpx 24rpx;
-}
+/*打卡日记加载完毕提示信息*/
+.not-more-punch-card-diary-notice {
+    width: auto;
+    height: auto;
+    margin: 25px 25% 0 25%;
 
-.flow-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
-.fade-title {
-  font-size: 28rpx;
-  color: #888888;
+    font-size: 12px;
+    color: #8a8a8a;
 }
-
-.img-text {
-  display: flex;
-  align-items: center;
-}
-
 .line {
-  height: 1px;
-  background-color: #f8f8f8;
-  margin: 18.72rpx 0;
+    width: 40px;
+    height: 1px;
+    background-color: #C9C9C9;
 }
-
-.horizontal {
-  display: flex;
-  align-items: center;
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: #C9C9C9;
+    border-radius: 50%;
 }
-
-.avatar-large {
-  width: 82rpx; 
-  height: 82rpx;
-  min-width: 82rpx;
-  max-width: 82rpx;
-  border-radius: 50%;
+/**********/
+.add-group-qr-code-img-notice-info {
+    width: 55%;
+    height: auto;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
-
-.title {
-  font-size: 28rpx;
+.notice-info-1 {
+    font-size: 14px;
+    color: black;
 }
-
-.b5 {
-  font-weight: 450;
+.notice-info-2 {
+    font-size: 12px;
+    color: #C9C9C9;
 }
-
-.subtitle {
-  font-size: 24rpx;
-  color: #888888;
-}
-
+/*  */

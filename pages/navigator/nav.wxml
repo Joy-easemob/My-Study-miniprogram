@@ -5,14 +5,14 @@
 
 <!--  -->
    <view class="cu-card case"  wx:for="{{userlist}}" wx:key="*this" wx:for-item="user">
-    <view class="cu-item shadow" bindtap='getDetial'>
+    <view class="cu-item shadow" bindtap='getDetial' data-id='{{user.userid}}'>
     <view class="cu-list menu-avatar" >
       <view class="cu-item">
-        <view class="cu-avatar round lg" style="background-image:url({{serverUrl}}{{user.avator}});">
+        <view class="cu-avatar round lg" style="background-image:url({{serverUrl}}{{user.avatar}});">
       </view>
       <view class="content flex-xs xs">
       <view class="text-grey">{{user.nickname}}</view>
-      <view class="text-gray text-sm flex justify-between">
+      <view class="text-gray text-sm flex margin-xs">
           十天前
             <view class="text-gray text-xs">
               <text class="cuIcon-attentionfill margin-lr-xs"></text> {{user.look}}
@@ -22,7 +22,8 @@
           </view>
         </view>
         <view class="grid  padding-xs">
-          <button class="cu-btn round bg-olive sm {{'shadow'}}">关注</button>
+         <view class="cu-tag bg-{{user.typeColor}} shadow round" wx:if="{{user.typeId===0}}">有方体验官</view> 
+         <view class="cu-tag bg-{{user.typeColor}} shadow round" wx:else>有方司导</view>
         </view>
         </view>
     </view>
@@ -35,4 +36,3 @@
   </view>
   </view>
   </view>
-  <!-- </block> -->

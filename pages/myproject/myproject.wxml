@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">我的项目</view>
+</cu-custom>
+<!-- 标题：推荐项目 -->
+<view class="bg-white solid-bottom"></view>
+ <view  wx:for="{{projeIntruduct}}"  wx:key="item.projectId" catchtap="goDetail" data-id="{{item.projectId}}">
+
+<view class="cu-card article">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.title}}
+</view>
+    </view>
+    <view class="content">
+      <image src="{{serverUrl}}{{item.image}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content">{{item.desc}}</view>
+        <view >
+          <view class="cu-tag bg-red light sm round">{{item.tags[0]}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.tags[1]}}</view>
+          <view class="cu-tag bg-yellow light sm round">{{item.tags[2]}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+  </view>

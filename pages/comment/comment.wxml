@@ -1,6 +1,5 @@
 <!-- 头部 -->
-<cu-custom bgColor="bg-orange" isBack="{{true}}">
-<view slot="backText">返回</view>
+<cu-custom bgColor="bg-white" isBack="{{false}}">
 <view slot="content">{{title}}</view></cu-custom>
 <!-- 讨论社区 -->
 
@@ -21,7 +20,7 @@
   <view class='single-line speaker' bindtap='clickSpeaker'>
     <image src='{{speaker.images}}'></image>
     <text style='margin-right: 8rpx;'>{{speaker.title}} </text> 
-    <text>{{ speaker.desc}}</text>
+    <text>{{speaker.desc}}</text>
   </view>
 </view>
  
@@ -40,56 +39,80 @@
 </view>
 
 <!-- 列表 -->
-<view wx:for="{{commentList}}" wx:for-item="item" wx:key="{{item.id}}">
-	
-  <view class="card">
-    <!-- Content Area -->
-    <view bindtap='topicClick' data-idx="{{index}}">
-      <view class="horizontal">
-        <image catchtap='clickAvatar' data-idx="{{index}}"
-          class='avatar-large' 
-          style='margin: 10rpx 18rpx 10rpx 0px;'
-          src="{{item.author.avatar}}" 
-          />
-        <view>
-          <view class='title b5'>{{item.author.nickname}}</view>
-          <view class='subtitle'>{{item.agoTime}}</view>
-        </view>
-		<!-- 点击举报 -->
-       <!-- <image class='menu' src="{{theme.images}}/menu.png" catchtap='clickMenu' data-idx='{{index}}' /> -->
-      </view>
-      <view style='margin-bottom:9.36rpx;'/>
-      <view>
-        <!-- 文本评论 -->
-        <view>
-          <kw-text text="{{item.content}}" limit="{{70}}" ></kw-text>
-        </view>
-
-        <!-- Image列表 -->
-        <block wx:if="{{item.images && item.images.length > 0}}">
-          <view style='margin: 8rpx 0rpx'>
-            <img-grid images="{{item.images}}"> </img-grid> 
+<view wx:for="{{commentList}}" wx:key="unique"  wx:for-index="idx" wx:for-item="comment">
+<view style='margin-bottom:9.36rpx; background-color: #fefefe;'/>
+<view class="cu-card dynamic {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{comment.user.avatar}});"></view>
+        <view class="content flex-sub">
+          <view class='justify-between'>
+            <view>{{comment.user.nickname}}</view>
+            <view class="cu-tag radius">普通尺寸</view>
           </view>
-        </block>
+          <view class="text-gray text-sm flex justify-between">
+            2019年12月3日
+          </view>
+        </view>
       </view>
     </view>
+    <view class="text-content">
+      {{comment.content}}
+    </view>
 
-    <!-- 讨论区的尾部 -->
-  <view class='line'></view>
-    <view class='flow-right'>
-     <!-- <view class='fade-title' style='margin-right:auto;'>{{item.time}}</view> -->
-      <view class='comment' bindtap='commentClick' data-idx="{{index}}">
-        <image src='{{comment}}'></image>
-        <text>评论</text>
+    <block wx:if="{{comment.type===1}}">
+   <view class="grid flex-sub padding-lr ">
+      <image class='hello' src='http://192.168.31.1:8080/admain/20191006/hello.jpg' mode='widthFix'></image>
+     </view>
+    </block>
+
+    <block wx:elif="{{comment.type===2}}">
+     <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+      <view class="bg-img {{isCard?'':'only-img'}}" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);" wx:for="{{isCard?9:1}}" wx:key="{{index}}">
       </view>
-      <view class='img-text' bindtap='favorClick' data-idx="{{index}}">
-        <image src="{{like}}"></image>
-        <text>赞</text>
+    </view>
+    </block>
+
+    <!--  -->
+    <block wx:if="{{comment.isgroup}}">
+    <view class="punch-Card-project-attend-user-list padding justify-center">
+      <view class="we-chat-group-qr-code-img bg-gray">
+        <image src="../../images/button/qr_code_img.png"></image>
+        <view class="add-group-qr-code-img-notice-info">
+          <view class="notice-info-1">
+            圈子微信交流群
+          </view>
+          <view class="notice-info-2">
+            10932人已点击
+          </view>
+        </view>
+        <view class="we-chat-group-qr-code-img-operate-btn">
+          <text>加入群聊</text>
+        </view>
       </view>
-	 </view>
-	</view>
-  
-  <view style='margin-bottom:9.36rpx;'/>
+    </view>
+  </block>
+    <!--  -->
+    <view class="text-gray text-xl text-right padding">
+      <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+      <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+      <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+    </view>
 </view>
-
+</view>
+</view>
+<!--  -->
+<!-- 线 -->
+<view class="not-more-punch-card-diary-notice" style="margin: 25px 22% 50px 22%">
+  <view class="line" style="margin-right: 2px"></view>
+    <view class="dot"></view>
+    <view style="margin: 0 5px;">我可是有底线的哦</view>
+    <view class="dot"></view>
+    <view class="line" style="margin-left: 2px"></view>
+</view>
+<!--  -->
 <!-- 新建 write -->
+<view bindtap='addcomment'>
+ <image  class='add' src='../../images/write.png'></image>
+</view>

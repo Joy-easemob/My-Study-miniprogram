@@ -1,7 +1,9 @@
 <!--pages/tmpl/fulltext/fulltext.wxml-->
-<text class="{{text.tag?'highlight':''}}" selectable='{{selectable}}'
+<view class="solid-bottom text-lg padding">
+<text class="{{text.tag?'highlight':''}} text-black" selectable='{{selectable}}'
     wx:for="{{showList}}" 
     wx:for-item="text"
     wx:key="{{index}}">{{text.text}}</text>
-<text wx:if="{{showAll}}">...</text>            
-<text wx:if="{{showAll}}" class='highlight'> 全文</text>
+<text wx:if="{{showAll}}" class="text-black">...</text>            
+<text wx:if="{{showAll}}" class='highlight text-black'> 全文</text>
+   </view>
