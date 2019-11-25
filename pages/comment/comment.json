@@ -1,6 +1,4 @@
 {
   "usingComponents": {
-    "img-grid": "../../components/img-grid/img-grid",
-    "kw-text":"../../components/kw-text/index"
   }
 }
